@@ -36,6 +36,11 @@ app.use(cors());
 app.use("/api/products", productsRoute);
 app.use("/api/users", userRoute);
 
+// welcome route
+app.get("/", (req, res) => {
+  res.send("API is running");
+});
+
 app.use("*", (req, res) => {
   res.status(404).send(`URL with ${req.originalUrl} not found`);
 });
